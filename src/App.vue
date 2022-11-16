@@ -1,47 +1,51 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
+<!--TEMPLATE HTML GENERALE-->
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
+  <AppHeader />
   <main>
-    <TheWelcome />
+    <AppSearch @filterchar="getCharacters" />
+    <CharacterList />
+    <div v-if="store.errormessage">
+      <h1> Opps ! Qualcosa è andato storto</h1>
+      <p>{{ store.errormessage }}</p>
+    </div>
+
   </main>
+
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+// IMPORT
+//import axios from 'axios';
+import AppHeader from './components/AppHeader.vue';
+import AppSearch from './components/AppSearch.vue';
+import CharacterList from './components/CharacterList.vue';
+import { store } from './store';
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+// SCRIPT EXPORT DEFAULT
+export default {
+  components: {
+    AppHeader,
+    AppSearch,
+    CharacterList,
+  },
+  data() {
+    return {
+
+    }
+  },
+
+  methods: {
+    getCharacters() {
+
+    },
+    created() {
+      this.getCharacters();
+    }
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 }
+</script>
+
+<style lang="scss" scoped>
+
 </style>

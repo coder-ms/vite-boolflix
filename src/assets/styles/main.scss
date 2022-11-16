@@ -1,0 +1,21 @@
+@use './partials/varaibles' as *;
+
+@import '@fontsource/montserrat/index.css';
+@import '@fontsource/montserrat/700.css';
+
+
+$fa-font-path: '../webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+
+@import 'bootstrap/scss/bootstrap';
+
+body {
+    font-family: $main-font;
+    background-color: rgb(15, 28, 48);
+
+    p {
+        font-size: 12px;
+        color: $text-color;
+    }
+}
