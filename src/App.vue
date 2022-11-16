@@ -18,7 +18,7 @@
 <script>
 
 // IMPORT
-//import axios from 'axios';
+import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppSearch from './components/AppSearch.vue';
 import CharacterList from './components/CharacterList.vue';

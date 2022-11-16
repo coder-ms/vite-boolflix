@@ -1,8 +1,8 @@
 <template>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">BOOLFLIX</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit">&#128269;</button>
                     </form>
                 </div>
             </div>
@@ -58,8 +58,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-    color: white;
-    font-weight: 700;
+.navbar {
+    background-color: grey;
+
+    .container-fluid {
+        .navbar-brand {
+            padding: 0 10px;
+            background-color: red;
+            color: black;
+        }
+    }
 }
 </style>
