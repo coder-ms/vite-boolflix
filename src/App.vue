@@ -4,10 +4,12 @@
   <main>
     <AppSearch @filterchar="getCharacters" />
     <CharacterList />
+    <!--
     <div v-if="store.errormessage">
       <h1> Opps ! Qualcosa è andato storto</h1>
       <p>{{ store.errormessage }}</p>
     </div>
+    -->
 
   </main>
 
@@ -20,7 +22,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppSearch from './components/AppSearch.vue';
 import CharacterList from './components/CharacterList.vue';
-import { store } from './store';
+//import { store } from './store';
 
 // SCRIPT EXPORT DEFAULT
 export default {
