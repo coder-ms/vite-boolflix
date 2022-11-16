@@ -2,14 +2,9 @@
 <template>
   <AppHeader />
   <main>
-    <AppSearch @filterchar="getCharacters" />
-    <CharacterList />
-    <!--
-    <div v-if="store.errormessage">
-      <h1> Opps ! Qualcosa è andato storto</h1>
-      <p>{{ store.errormessage }}</p>
-    </div>
-    -->
+    <MovieSearch @loadMovie="getMovies" />
+    <MovieList />
+
 
   </main>
 
@@ -20,30 +15,30 @@
 // IMPORT
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-import AppSearch from './components/AppSearch.vue';
-import CharacterList from './components/CharacterList.vue';
-//import { store } from './store';
+import MovieSearch from './components/MovieSearch.vue';
+import MovieList from './components/MovieList.vue';
+import { store } from './store';
 
 // SCRIPT EXPORT DEFAULT
 export default {
   components: {
     AppHeader,
-    AppSearch,
-    CharacterList,
+    MovieSearch,
+    MovieList,
   },
   data() {
     return {
-
+      store,
     }
   },
 
   methods: {
-    getCharacters() {
-
-    },
-    created() {
-      this.getCharacters();
+    getMovies() {
+      store.movieLoad(store.trendingEndpoint[1]); // 0
     }
+  },
+  created() {
+    this.getMovies()
   }
 }
 </script>
