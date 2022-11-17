@@ -9,7 +9,6 @@
       <div class="movieInfo">
         <h6>{{ movieTag.title }}</h6>
         <p class="font-weight-bold">{{ movieTag.original_title }}</p>
-        {{ store.getFlagImg(movieTag.original_language) }}
         <img class="flagx" :src="store.getFlagImg(movieTag.original_language)" alt="">
         <p>{{ movieTag.vote_average }} / 10</p>
       </div>

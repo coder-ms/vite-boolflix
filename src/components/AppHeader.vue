@@ -34,9 +34,22 @@
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">&#128269;</button>
+                    <form class="row row-cols-lg-auto g-3 align-items-center" @submit.prevent="searchMovies">
+                        <div class="col-12">
+                            <label class="visually-hidden" for="charactername">Search name</label>
+                            <input type="text" class="form-control" id="charactername" placeholder="Search name"
+                                v-model.trim="store.searchTitleVal">
+                        </div>
+
+                        <!--BUTTON SUBMIT-->
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+
+                        <!--BUTTON RESET-->
+                        <div class="col-12">
+                            <button type="reset" class="btn btn-primary" @click="resetSearch">Reset</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -47,8 +60,25 @@
 </template>
 
 <script>
+import { store } from '../store';
+
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            store,
+
+        }
+    },
+    methods: {
+        searchMovies() {
+            this.$emit('loadMovie');
+        },
+        resetSearch() {
+            store.searchTitleVal = '';
+            this.$emit('loadMovie');
+        }
+    },
     props: {
         title: String
     }

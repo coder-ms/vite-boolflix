@@ -1,8 +1,8 @@
 <!--TEMPLATE HTML GENERALE-->
 <template>
-  <AppHeader />
+  <AppHeader @loadMovie="getMovies" />
   <main>
-    <MovieSearch @loadMovie="getMovies" />
+    <!--<MovieSearch @loadMovie="getMovies" />-->
     <MovieList />
 
 
