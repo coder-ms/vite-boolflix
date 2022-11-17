@@ -34,13 +34,10 @@ export default {
   },
 
   methods: {
-    getTv() {
-      store.tvLoad(store.trendingEndpoint[0]); // 0
-    },
     getMovies() {
-      store.movieLoad(store.trendingEndpoint[1]); // 0
-      console.log('(store.trendingEndpoint[1]) = ' + store.trendingEndpoint[1]);
-      console.log('store.trendingEndpoint = ' + store.trendingEndpoint)
+      store.movieLoad(store.searchEndpoint[1]); // 0
+      console.log('(store.searchEndpoint[0]) = ' + store.searchEndpoint[0]);
+      console.log('(store.searchEndpoint[1]) = ' + store.searchEndpoint[1]);
     },
 
   },

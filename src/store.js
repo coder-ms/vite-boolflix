@@ -7,15 +7,13 @@ export const store = reactive({
     movieList: [],
     //
     searchLanguageVal: 'it',
-    searchLanguageKey: 'language=',
     searchTitleVal: 'a',
-    searchTitleKey: 'query=',
+
 
     // PATH MOVIE & TV URL 
     apiURL: 'https://api.themoviedb.org/3/',
 
-    searchEndpoint: ['tv/search', 'movie/search'],
-    trendingEndpoint: ['tv/popular', 'movie/popular'],
+    searchEndpoint: ['search/tv', 'search/movie'],
 
     // PATH IMG URL 
     pathImgURL: 'https://image.tmdb.org/t/p/w342/',
@@ -28,16 +26,17 @@ export const store = reactive({
     movieLoad(requestEndpoint) {
         this.loading = true;
         this.actualEndpoint = requestEndpoint;
-        let searchQuery = this.searchLanguageKey + this.searchLanguageVal + '&' + this.searchTitleKey + this.searchTitleVal;
         let movieFilter = {
             params: {
                 api_key: 'da05c2e37d45ba76e82df41389aebb58',
-                query: searchQuery
+                language: this.searchLanguageVal,
+                query: this.searchTitleVal,
             }
         }
         let apiEndPoint = this.apiURL + requestEndpoint;
-        console.log('searchQuery = ' + searchQuery);
-        console.log('apiEndPoint = ' + apiEndPoint);
+        console.log('language = ' + this.searchLanguageVal);
+        console.log('query = ' + this.searchTitleVal);
+        console.log('requestEndpoint = ' + requestEndpoint);
         console.log('movieFilter.params = ' + movieFilter.params);
         //
         axios.get(apiEndPoint, movieFilter).then((res) => {
@@ -46,6 +45,8 @@ export const store = reactive({
             this.loading = false;
         })
     },
+
+
     tvLoad(requestEndpoint) {
         this.loading = true;
         this.actualEndpoint = requestEndpoint;

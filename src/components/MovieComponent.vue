@@ -7,8 +7,13 @@
       </div>
 
       <div class="movieInfo">
-        <h6>{{ movieTag.title }}</h6>
-        <p class="font-weight-bold">{{ movieTag.original_title }}</p>
+
+        <h6 v-if="movieTag.title"> {{ movieTag.title }}</h6>
+        <h6 v-else>{{ movieTag.name }}</h6>
+
+        <p v-if="movieTag.original_title" class="font-weight-bold">{{ movieTag.original_title }}</p>
+        <p v-else class="font-weight-bold">{{ movieTag.original_name }}</p>
+
         <img class="flagx" :src="store.getFlagImg(movieTag.original_language)" alt="">
         <p>{{ movieTag.vote_average }} / 10</p>
       </div>
