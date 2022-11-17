@@ -44,6 +44,27 @@ export const store = reactive({
             this.loading = false;
         })
     },
+    tvLoad(requestEndpoint) {
+        this.loading = true;
+        this.actualEndpoint = requestEndpoint;
+        let searchQuery = this.searchLanguageKey + this.searchLanguageVal + '&' + this.searchTitleKey + this.searchTitleVal;
+        let movieFilter = {
+            params: {
+                api_key: 'da05c2e37d45ba76e82df41389aebb58',
+                query: searchQuery
+            }
+        }
+        let apiEndPoint = this.apiURL + requestEndpoint;
+        console.log('searchQuery = ' + searchQuery);
+        console.log('apiEndPoint = ' + apiEndPoint);
+        console.log('movieFilter.params = ' + movieFilter.params);
+        //
+        axios.get(apiEndPoint, movieFilter).then((res) => {
+            this.movieList = [...res.data.results];
+            console.log('movieList[] = ' + this.movieList);
+            this.loading = false;
+        })
+    },
 
     getFlagImg(flagReq) {
         let flag = 'it';

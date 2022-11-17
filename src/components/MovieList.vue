@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .struct {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     background-color: white;
     padding: 40px 30px;

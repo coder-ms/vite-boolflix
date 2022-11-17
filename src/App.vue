@@ -1,6 +1,7 @@
 <!--TEMPLATE HTML GENERALE-->
 <template>
   <AppHeader @loadMovie="getMovies" />
+
   <main>
     <!--<MovieSearch @loadMovie="getMovies" />-->
     <MovieList />
@@ -33,9 +34,13 @@ export default {
   },
 
   methods: {
+    getTv() {
+      store.tvLoad(store.trendingEndpoint[0]); // 0
+    },
     getMovies() {
       store.movieLoad(store.trendingEndpoint[1]); // 0
-    }
+    },
+
   },
   created() {
     this.getMovies()

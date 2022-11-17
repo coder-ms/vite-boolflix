@@ -36,6 +36,9 @@ export default {
 
 <style lang="scss" scoped>
 .cardMovie {
+  display: flex;
+  justify-content: space-between;
+
   .box {
     width: 100%;
 
