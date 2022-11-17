@@ -35,6 +35,17 @@
                         </li>
                     </ul>
                     <form class="row row-cols-lg-auto g-3 align-items-center" @submit.prevent="searchMovies">
+                        <!--SELECT MOVIE OR TV-->
+                        <div class="col-12">
+                            <label class="visually-hidden" for="searchOptions">Select series</label>
+                            <select class="form-select" id="searchOptions" v-model="store.searchSeries">
+                                <option selected value="">Choose...</option>
+                                <option :value="status" v-for="(status, index) in searchOptions" :key="index">{{ status
+                                }}</option>
+                            </select>
+                        </div>
+
+                        <!-- TITLE FILTER -->
                         <div class="col-12">
                             <label class="visually-hidden" for="charactername">Search name</label>
                             <input type="text" class="form-control" id="charactername" placeholder="Search name"
@@ -67,18 +78,28 @@ export default {
     data() {
         return {
             store,
-
+            searchOptions: [
+                'movies',
+                'tv series',
+            ],
+            /*
+            SEARCH SERIES OR MOVIE
+            search: { series: '',}
+             */
         }
     },
+
     methods: {
         searchMovies() {
             this.$emit('loadMovie');
         },
         resetSearch() {
             store.searchTitleVal = '';
+            store.searchSeries = 'movie';
             this.$emit('loadMovie');
         }
     },
+
     props: {
         title: String
     }

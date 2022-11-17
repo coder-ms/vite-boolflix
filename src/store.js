@@ -8,6 +8,7 @@ export const store = reactive({
     //
     searchLanguageVal: 'it',
     searchTitleVal: 'a',
+    searchSeries: 'movies',
 
 
     // PATH MOVIE & TV URL 
@@ -26,6 +27,7 @@ export const store = reactive({
     movieLoad(requestEndpoint) {
         this.loading = true;
         this.actualEndpoint = requestEndpoint;
+        if ('' == this.searchTitleVal) this.searchTitleVal = 'a';
         let movieFilter = {
             params: {
                 api_key: 'da05c2e37d45ba76e82df41389aebb58',
@@ -41,7 +43,7 @@ export const store = reactive({
         //
         axios.get(apiEndPoint, movieFilter).then((res) => {
             this.movieList = [...res.data.results];
-            console.log('movieList[] = ' + this.movieList);
+            // console.log('movieList[] = ' + this.movieList);
             this.loading = false;
         })
     },

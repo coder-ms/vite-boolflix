@@ -15,7 +15,6 @@
         <p v-else class="font-weight-bold">{{ movieTag.original_name }}</p>
 
         <img class="flagx" :src="store.getFlagImg(movieTag.original_language)" alt="">
-        <!--<p>{{ movieTag.vote_average }} / 10</p>-->
         <div class="rottenTomatoes">
           <i v-for="star in (Math.round(movieTag.vote_average / 2))" class="fa-solid fa-star"></i>
         </div>

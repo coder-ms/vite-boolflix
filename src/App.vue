@@ -3,10 +3,7 @@
   <AppHeader @loadMovie="getMovies" />
 
   <main>
-    <!--<MovieSearch @loadMovie="getMovies" />-->
     <MovieList />
-
-
   </main>
 
 </template>
@@ -16,7 +13,6 @@
 // IMPORT
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-import MovieSearch from './components/MovieSearch.vue';
 import MovieList from './components/MovieList.vue';
 import { store } from './store';
 
@@ -24,7 +20,6 @@ import { store } from './store';
 export default {
   components: {
     AppHeader,
-    MovieSearch,
     MovieList,
   },
   data() {
@@ -35,14 +30,16 @@ export default {
 
   methods: {
     getMovies() {
-      store.movieLoad(store.searchEndpoint[1]); // 0
-      console.log('(store.searchEndpoint[0]) = ' + store.searchEndpoint[0]);
-      console.log('(store.searchEndpoint[1]) = ' + store.searchEndpoint[1]);
+      //console.log('store.searchSeries =' + store.searchSeries);
+      //console.log('store.searchTitleVal =' + store.searchTitleVal);
+      let endPoint = store.searchEndpoint[0];
+      if ('movies' == store.searchSeries) endPoint = store.searchEndpoint[1];
+      store.movieLoad(endPoint);
     },
 
   },
   created() {
-    this.getMovies()
+    this.getMovies();
   }
 }
 </script>
