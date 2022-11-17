@@ -39,6 +39,7 @@ export default {
     },
     getMovies() {
       store.movieLoad(store.trendingEndpoint[1]); // 0
+      console.log(store.trendingEndpoint);
     },
 
   },
