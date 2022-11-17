@@ -21,6 +21,8 @@ export const store = reactive({
     pathImgURL: 'https://image.tmdb.org/t/p/w342/',
     //FLAGS API
     flagsAPIurl: 'https://countryflagsapi.com/png/',
+    //flagEmpty: '../assets/img/emptyFlag.png',
+    flagEmpty: 'https://countryflagsapi.com/png/aq',
 
 
     movieLoad(requestEndpoint) {
@@ -67,10 +69,19 @@ export const store = reactive({
     },
 
     getFlagImg(flagReq) {
-        let flag = 'it';
-        flagReq == 'uk' ? flag = 'gb' : '';
-        flagReq == 'en' ? flag = 'us' : '';
-        return this.flagsAPIurl + flag;
-    }
+        let flag = '';
+        let rtnFlag = this.flagEmpty;
 
+        if (flagReq == 'uk') flag = 'gb';
+        if (flagReq == 'en') flag = 'us';
+        if (flagReq == 'es') flag = 'es';
+        if (flagReq == 'fr') flag = 'fr';
+        if (flagReq == 'US') flag = 'us';
+        if (flagReq == 'de') flag = 'de';
+        if (flagReq == 'it') flag = 'it';
+
+        if ('' != flag) rtnFlag = this.flagsAPIurl + flag;
+
+        return rtnFlag;
+    }
 });
