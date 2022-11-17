@@ -9,8 +9,8 @@
       <div class="movieInfo">
         <h6>{{ movieTag.title }}</h6>
         <p class="font-weight-bold">{{ movieTag.original_title }}</p>
+        {{ store.getFlagImg(movieTag.original_language) }}
         <img class="flagx" :src="store.getFlagImg(movieTag.original_language)" alt="">
-        <!--<p>{{ movieTag.original_language }}</p>-->
         <p>{{ movieTag.vote_average }} / 10</p>
       </div>
 
@@ -46,25 +46,26 @@ export default {
       img {
         width: 100%;
       }
+    }
 
-      .movieInfo {
-        padding: 5px;
-        margin-top: 10px;
+  }
 
-        h6 {
-          text-transform: capitalize;
-          font-weight: 700;
-        }
+  .movieInfo {
+    padding: 5px;
+    margin-top: 10px;
 
-        p {
-          font-size: 14px;
-          color: rgb(221, 220, 220);
-        }
+    h6 {
+      text-transform: capitalize;
+      font-weight: 700;
+    }
 
-        .flagx {
-          width: 10%;
-        }
-      }
+    p {
+      font-size: 14px;
+      color: rgb(221, 220, 220);
+    }
+
+    img.flagx {
+      width: 20px;
     }
   }
 }
