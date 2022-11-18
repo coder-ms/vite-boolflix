@@ -43,7 +43,7 @@ export default {
         padding: 10px;
         margin-bottom: 10px;
         text-align: center;
-        background-color: rgb(15, 28, 48);
+        background-color: rgb(29, 29, 31);
     }
 }
 </style>

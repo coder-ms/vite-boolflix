@@ -86,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 .navBar {
-    background-color: grey;
+    background-color: rgb(27, 25, 25);
     display: flex;
     height: 60px;
     padding: 10px;
@@ -96,38 +96,42 @@ export default {
         align-items: center;
 
 
+        div {
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
 
 
 
-            li {
-                display: inline;
-                margin-left: 6px;
-                height: 40px;
-
-                &:first-child {
-                    background-color: red;
-                    height: 40px;
-                    font-weight: 800;
-                }
-
-                a {
-                    text-decoration: none;
-                    color: black;
-                    font-weight: 600;
+                li {
+                    display: inline;
+                    margin-left: 6px;
 
                     &:first-child {
-                        font-weight: 800;
-                        color: white;
+                        background-color: red;
+                        padding: 10px;
                     }
-                }
 
+                    a {
+                        text-decoration: none;
+
+                        &:first-child {
+                            font-weight: 800;
+                            color: white;
+                        }
+
+                        color: black;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+
+                }
             }
         }
+
+
 
     }
 
@@ -141,6 +145,7 @@ export default {
                     margin: 0 5px;
                     background-color: black;
                     color: white;
+                    border: 1px solid grey;
                 }
             }
 
@@ -152,6 +157,7 @@ export default {
                     margin: 0 5px;
                     background-color: black;
                     color: white;
+                    border: 1px solid grey;
                 }
             }
         }
