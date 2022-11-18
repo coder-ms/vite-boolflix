@@ -108,23 +108,20 @@ export default {
                 li {
                     display: inline;
                     margin-left: 6px;
+                    font-size: 14px;
+                    font-weight: 600;
+
 
                     &:first-child {
                         background-color: red;
                         padding: 10px;
+                        font-weight: 800;
+                        font-size: 16px;
                     }
 
                     a {
                         text-decoration: none;
-
-                        &:first-child {
-                            font-weight: 800;
-                            color: white;
-                        }
-
-                        color: black;
-                        font-weight: 600;
-                        font-size: 14px;
+                        color: white;
                     }
 
                 }
