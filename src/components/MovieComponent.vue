@@ -2,12 +2,10 @@
   <div class="cardMovie">
     <div class="box">
 
-      <div class="imgMovie">
-        <img :src="store.pathImgURL + movieTag.poster_path" :alt="movieTag.name">
-      </div>
-
       <div class="movieInfo">
-
+        <div class="imgMovie">
+          <img :src="store.pathImgURL + movieTag.poster_path" :alt="movieTag.name">
+        </div>
         <h6 v-if="movieTag.title"> {{ movieTag.title }}</h6>
         <h6 v-else>{{ movieTag.name }}</h6>
 
@@ -19,7 +17,9 @@
           <i v-for="star in (Math.round(movieTag.vote_average / 2))" class="fa-solid fa-star"></i>
         </div>
       </div>
-
+      <div class="moviePlot">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -46,40 +46,63 @@ export default {
   display: flex;
   justify-content: space-between;
 
+  &:hover {
+    transform: rotateY(180deg);
+  }
+
   .box {
+    position: relative;
     width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: relative;
 
-    .imgMovie {
-      margin-bottom: 10px;
+    &:hover {
+      transform: rotateY(180deg);
+    }
 
-      img {
-        width: 100%;
+    .movieInfo {
+      padding: 5px;
+      margin-top: 10px;
+
+      .imgMovie {
+        margin-bottom: 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      h6 {
+        text-transform: capitalize;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 14px;
+        color: rgb(221, 220, 220);
+      }
+
+      img.flagx {
+        width: 20px;
+      }
+
+      .rottenTomatoes {
+        color: gold;
       }
     }
 
+    .plotMovie {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
   }
 
-  .movieInfo {
-    padding: 5px;
-    margin-top: 10px;
-
-    h6 {
-      text-transform: capitalize;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 14px;
-      color: rgb(221, 220, 220);
-    }
-
-    img.flagx {
-      width: 20px;
-    }
-
-    .rottenTomatoes {
-      color: gold;
-    }
-  }
 }
 </style>
