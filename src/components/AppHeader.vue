@@ -2,13 +2,17 @@
     <header>
         <nav class="navBar col-12 col-lg-12 col-md-12 col-sm-12">
             <div class="boolflixMenu col-8 col-lg-8 col-md-8 col-sm-8">
-                <a class="navbarBrand" href="#">BOOLFLIX</a>
-                <ul class="col-6 col-lg-6 col-md-6 col-sm-6">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
+                <div class=" col-3 col-lg-3 col-md-3 col-sm-3">
+                    <a class="navbarBrand" href="#">BOOLFLIX</a>
+                </div>
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="navbarCollapse col-4 col-lg-4 col-md-4 col-sm-4" id="navbarSupportedContent">
                 <form class="row row-cols-lg-auto g-3 align-items-center" @submit.prevent="searchMovies">
@@ -102,7 +106,7 @@ export default {
             color: black;
             font-weight: 600;
             font-size: 20px;
-            height: 100%;
+
         }
 
         ul {
