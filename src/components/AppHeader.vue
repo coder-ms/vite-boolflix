@@ -2,11 +2,9 @@
     <header>
         <nav class="navBar col-12 col-lg-12 col-md-12 col-sm-12">
             <div class="boolflixMenu col-8 col-lg-8 col-md-8 col-sm-8">
-                <div class=" col-2 col-lg-2 col-md-2 col-sm-2">
-                    <a class="navbarBrand" href="#">BOOLFLIX</a>
-                </div>
                 <div class="col-6 col-lg-6 col-md-6 col-sm-6">
                     <ul>
+                        <li><a class="navbarBrand" href="#">BOOLFLIX</a></li>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#news">News</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -97,31 +95,37 @@ export default {
         display: flex;
         align-items: center;
 
-        .navbarBrand {
-            background-color: red;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: black;
-            font-weight: 600;
-            font-size: 20px;
 
-        }
 
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
 
+
+
             li {
                 display: inline;
-                margin: 0 10px;
+                margin-left: 6px;
+                height: 40px;
+
+                &:first-child {
+                    background-color: red;
+                    height: 40px;
+                    font-weight: 800;
+                }
 
                 a {
                     text-decoration: none;
                     color: black;
+                    font-weight: 600;
+
+                    &:first-child {
+                        font-weight: 800;
+                        color: white;
+                    }
                 }
+
             }
         }
 
