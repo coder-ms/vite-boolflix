@@ -2,7 +2,7 @@
     <header>
         <nav class="navBar col-12 col-lg-12 col-md-12 col-sm-12">
             <div class="boolflixMenu col-8 col-lg-8 col-md-8 col-sm-8">
-                <div class=" col-3 col-lg-3 col-md-3 col-sm-3">
+                <div class=" col-2 col-lg-2 col-md-2 col-sm-2">
                     <a class="navbarBrand" href="#">BOOLFLIX</a>
                 </div>
                 <div class="col-6 col-lg-6 col-md-6 col-sm-6">
@@ -132,16 +132,22 @@ export default {
             div {
 
                 .searchButton {
+                    border: none;
                     border-radius: 40%;
                     margin: 0 5px;
+                    background-color: black;
+                    color: white;
                 }
             }
 
             div {
 
                 .resetButton {
+                    border: none;
                     border-radius: 50%;
                     margin: 0 5px;
+                    background-color: black;
+                    color: white;
                 }
             }
         }

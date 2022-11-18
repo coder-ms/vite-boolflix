@@ -7,8 +7,8 @@ export const store = reactive({
     movieList: [],
     //
     searchLanguageVal: 'it',
-    searchTitleVal: 'a',
-    searchSeries: 'movies',
+    searchTitleVal: '',
+    searchSeries: '',
 
 
     // PATH MOVIE & TV URL 
@@ -27,17 +27,24 @@ export const store = reactive({
     movieLoad(requestEndpoint) {
         this.loading = true;
         this.actualEndpoint = requestEndpoint;
-        if ('' == this.searchTitleVal) this.searchTitleVal = 'a';
+        let searchTitle = this.searchTitleVal;
+
+        let searchSandM = this.searchSeries;
+
+        let searchLanguage = this.searchLanguageVal;
+        if ('' == searchTitle) searchTitle = 'a';
+
+        //
         let movieFilter = {
             params: {
                 api_key: 'da05c2e37d45ba76e82df41389aebb58',
-                language: this.searchLanguageVal,
-                query: this.searchTitleVal,
+                language: searchLanguage,
+                query: searchTitle,
             }
         }
         let apiEndPoint = this.apiURL + requestEndpoint;
-        console.log('language = ' + this.searchLanguageVal);
-        console.log('query = ' + this.searchTitleVal);
+        console.log('language = ' + searchLanguage);
+        console.log('query = ' + searchTitle);
         console.log('requestEndpoint = ' + requestEndpoint);
         console.log('movieFilter.params = ' + movieFilter.params);
         //
@@ -47,30 +54,6 @@ export const store = reactive({
             this.loading = false;
         })
     },
-
-
-    tvLoad(requestEndpoint) {
-        this.loading = true;
-        this.actualEndpoint = requestEndpoint;
-        let searchQuery = this.searchLanguageKey + this.searchLanguageVal + '&' + this.searchTitleKey + this.searchTitleVal;
-        let movieFilter = {
-            params: {
-                api_key: 'da05c2e37d45ba76e82df41389aebb58',
-                query: searchQuery
-            }
-        }
-        let apiEndPoint = this.apiURL + requestEndpoint;
-        console.log('searchQuery = ' + searchQuery);
-        console.log('apiEndPoint = ' + apiEndPoint);
-        console.log('movieFilter.params = ' + movieFilter.params);
-        //
-        axios.get(apiEndPoint, movieFilter).then((res) => {
-            this.movieList = [...res.data.results];
-            console.log('movieList[] = ' + this.movieList);
-            this.loading = false;
-        })
-    },
-
     getFlagImg(flagReq) {
         let flag = '';
         let rtnFlag = this.flagEmpty;
@@ -87,4 +70,5 @@ export const store = reactive({
 
         return rtnFlag;
     }
+
 });
