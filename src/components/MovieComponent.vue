@@ -46,10 +46,6 @@ export default {
   display: flex;
   justify-content: space-between;
 
-  &:hover {
-    transform: rotateY(180deg);
-  }
-
   .box {
     position: relative;
     width: 100%;
