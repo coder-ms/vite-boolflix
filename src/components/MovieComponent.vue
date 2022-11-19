@@ -1,7 +1,12 @@
 <template>
   <div class="movieInfoFront">
     <div class="imgMovie">
-      <img :src="store.pathImgURL + movieTag.poster_path" :alt="movieTag.name">
+      <img v-if="movieTag.poster_path" :src="store.pathImgURL + movieTag.poster_path" :alt="movieTag.name">
+      <img v-else src="../../public/img/broken-1.png" alt="">
+      <!--
+      <p v-if="movieTag.poster_path">movieTag.poster_path</p>
+      <p v-else>../../public/img/broken-1.png</p>
+      -->
     </div>
   </div>
   <div class="moviePlotBack">
