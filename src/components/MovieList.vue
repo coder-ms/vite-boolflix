@@ -5,15 +5,6 @@
     <div class="struct" v-if="!store.loading">
         <div class="cardSection" v-for="(item, index) in store.movieList" :key="item.id">
             <MovieComponent :movieTag="item" />
-
-            <!--
-            <div class="moviePlot">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nam totam consequuntur eius ut
-                    neque incidunt,
-                    iusto quasi cum, aliquam aut? Molestiae, dolor perferendis voluptate maiores qui sed eum facilis.
-                </p>
-            </div>
-            -->
         </div>
     </div>
 </template>
@@ -61,24 +52,6 @@ export default {
         &:hover {
             transform: rotateY(180deg);
         }
-
-        /*
-        .moviePlot {
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            position: absolute;
-            color: white;
-
-            transform: translate(-3%, -99%);
-            padding: 10px;
-            text-align: left;
-
-            p {
-                font-size: 12px;
-            }
-        }
-        */
     }
 }
 </style>
