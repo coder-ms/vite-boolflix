@@ -19,8 +19,9 @@
     <div v-else="movieTag.vote_average" class="rottenTomatoes">
       <p>VOTAZIONE NON DISPONIBILE</p>
     </div>
-    <p>Trama:</p>
-    <p>{{ movieTag.overview }}</p>
+    <span>Trama:</span>
+    <p v-if="movieTag.overview">{{ movieTag.overview }}</p>
+    <span v-else> &nbsp;TRAMA NON DISPONIBILE</span>
   </div>
 
 </template>
@@ -65,6 +66,7 @@ export default {
   color: white;
   top: 0;
   left: 0;
+  width: 100%;
   padding: 10px;
   transform: rotateY(180deg);
   text-align: left;
@@ -90,6 +92,10 @@ export default {
     .fa-solid {
       color: gold;
     }
+  }
+
+  span {
+    font-size: 12px;
   }
 
   p {
