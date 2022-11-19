@@ -39,8 +39,6 @@ export default {
     .cardSection {
         //FLIPCARD INNER
         border: 1px solid black;
-        padding: 10px;
-        margin-bottom: 10px;
         text-align: center;
         background-color: rgb(29, 29, 31);
         position: relative;
@@ -48,6 +46,7 @@ export default {
         text-align: center;
         transition: transform 1s;
         transform-style: preserve-3d;
+        margin-bottom: 20px;
 
         &:hover {
             transform: rotateY(180deg);
