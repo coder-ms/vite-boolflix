@@ -122,7 +122,13 @@ export default {
                     a {
                         text-decoration: none;
                         color: white;
+
+                        &:hover {
+                            transform: scale(1.5);
+                        }
                     }
+
+
 
                 }
             }

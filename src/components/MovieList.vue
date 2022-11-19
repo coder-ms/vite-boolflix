@@ -5,6 +5,15 @@
     <div class="struct" v-if="!store.loading">
         <div class="cardSection" v-for="(item, index) in store.movieList" :key="item.id">
             <MovieComponent :movieTag="item" />
+
+            <!--
+            <div class="moviePlot">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nam totam consequuntur eius ut
+                    neque incidunt,
+                    iusto quasi cum, aliquam aut? Molestiae, dolor perferendis voluptate maiores qui sed eum facilis.
+                </p>
+            </div>
+            -->
         </div>
     </div>
 </template>
@@ -33,17 +42,43 @@ export default {
     padding: 40px 30px;
     display: flex;
     color: white;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 20px;
 
     .cardSection {
-        width: 18%;
+        //FLIPCARD INNER
         border: 1px solid black;
         padding: 10px;
         margin-bottom: 10px;
         text-align: center;
         background-color: rgb(29, 29, 31);
+        position: relative;
+        width: 20%;
+        text-align: center;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+
+        &:hover {
+            transform: rotateY(180deg);
+        }
+
+        /*
+        .moviePlot {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            color: white;
+
+            transform: translate(-3%, -99%);
+            padding: 10px;
+            text-align: left;
+
+            p {
+                font-size: 12px;
+            }
+        }
+        */
     }
 }
 </style>
