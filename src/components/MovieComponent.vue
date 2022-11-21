@@ -24,7 +24,7 @@
     <div v-else="movieTag.vote_average" class="rottenTomatoes">
       <p>VOTAZIONE NON DISPONIBILE</p>
     </div>
-    <span>Trama:</span>
+    <span>Trama: </span>
     <p v-if="movieTag.overview">{{ movieTag.overview }}</p>
     <span v-else> &nbsp;TRAMA NON DISPONIBILE</span>
   </div>
